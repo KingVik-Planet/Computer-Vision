@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba5f527-2f7a-489c-96c7-a666774aa60d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Code1_Clone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Mountain.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +49,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Code1.executor": "Run",
+    "Python.Code1_Clone.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RunDashboard">

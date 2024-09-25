@@ -1,10 +1,9 @@
 #Import cv2
-
 import cv2
 import numpy as np
 
 #Reading the Imagery
-image = cv2.imread("images/img.png")
+image = cv2.imread("images/Mountain.png")
 
 # Checking if the Image is loaded successfully
 if image is None:
