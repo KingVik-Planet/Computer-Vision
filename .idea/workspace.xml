@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba5f527-2f7a-489c-96c7-a666774aa60d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CV_Projects/Projects/VideoCapture_Grayscale.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CV_Projects/Projects/VideoCapture_RGB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,5 +84,16 @@
       <updated>1727267116421</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

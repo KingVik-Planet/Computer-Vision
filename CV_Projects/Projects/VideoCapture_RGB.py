@@ -43,20 +43,20 @@ while True:
     thresh_frame = cv2.threshold(delta_frame, 75, 255, cv2.THRESH_BINARY)[1]
     dil_frame = cv2.dilate(thresh_frame, None, iterations=2)
 
-    # contours, _ = cv2.findContours(dil_frame, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _ = cv2.findContours(dil_frame, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # for contour in contours:
-    #     if cv2.contourArea(contour) < 5000:
-    #         continue
-    #     x, y, w, h = cv2.boundingRect(contour)
-    #     cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 3)
-    #
-    #     faces = face_cascade.detectMultiScale(gray_frame_gau, scaleFactor=1.1, minNeighbors=5)
-    #     for (fx, fy, fw, fh) in faces:
-    #         center_x = fx + fw // 2
-    #         center_y = fy + fh // 2
-    #         radius = max(fw, fh) // 2
-    #         cv2.circle(frame, (center_x, center_y), radius, (0, 255, 0), 2)
+    for contour in contours:
+        if cv2.contourArea(contour) < 5000:
+            continue
+        x, y, w, h = cv2.boundingRect(contour)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 3)
+
+        faces = face_cascade.detectMultiScale(gray_frame_gau, scaleFactor=1.1, minNeighbors=5)
+        for (fx, fy, fw, fh) in faces:
+            center_x = fx + fw // 2
+            center_y = fy + fh // 2
+            radius = max(fw, fh) // 2
+            cv2.circle(frame, (center_x, center_y), radius, (0, 255, 0), 2)
 
     # Start recording if motion detected
     if not recording:
@@ -71,23 +71,23 @@ while True:
     timestamp = datetime.now().strftime("Cam1: Date:%d/%m/%Y:Time:%H:%M:%S")
     cv2.putText(frame, timestamp, (10, 20), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 0, 0), 1)
 
-if recording:
-    out.write(frame)
+    if recording:
+        out.write(frame)
 
-status_list.append(status)
-status_list = status_list[-2:]
+    status_list.append(status)
+    status_list = status_list[-2:]
 
-# Stop recording if no motion is detected
-if status == 0 and recording:
-    recording = False
-    out.release()
+    # Stop recording if no motion is detected
+    if status == 0 and recording:
+        recording = False
+        out.release()
 
-# Display the Detection Screen
-cv2.imshow("RGB Screen", frame)
+    # Display the Detection Screen
+    cv2.imshow("RGB Screen", frame)
 
-key = cv2.waitKey(1)
-if key == ord("q"):
-    break
+    key = cv2.waitKey(1)
+    if key == ord("q"):
+        break
 
 # Release the video capture and writer
 if out:
